@@ -1,0 +1,752 @@
+/* OTP Page Styles - Matching Login Page Exactly */
+
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #8b5cf6;
+    --dark-bg: #0f172a;
+    --dark-surface: #1e293b;
+    --dark-card: #334155;
+    --dark-border: #475569;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --danger-color: #ef4444;
+}
+
+/* Match login page background exactly with proper scrolling */
+body.auth-bg {
+    background-color: var(--dark-bg);
+    background-image:
+        radial-gradient(circle at 1px 1px, var(--dark-border) 1px, transparent 0),
+        radial-gradient(circle at 25px 25px, var(--dark-surface) 1px, transparent 0);
+    background-size: 50px 50px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure background covers full document height */
+html {
+    height: 120%;
+    background-color: var(--dark-bg);
+    background-image:
+        radial-gradient(circle at 1px 1px, var(--dark-border) 1px, transparent 0),
+        radial-gradient(circle at 25px 25px, var(--dark-surface) 1px, transparent 0);
+    background-size: 50px 50px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+    background-image:
+        radial-gradient(circle at 1px 1px, var(--dark-border) 1px, transparent 0),
+        radial-gradient(circle at 25px 25px, var(--dark-surface) 1px, transparent 0);
+    background-size: 50px 50px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Match login page auth-card exactly with proper spacing */
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: pop-in 0.6s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+    opacity: 0;
+    margin: 2rem 0;
+    overflow: visible;
+}
+
+@keyframes pop-in {
+    0% { transform: scale(0.95) translateY(30px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Ensure container is fully visible */
+.w-full.max-w-md.space-y-10.p-10.rounded-2xl.auth-card {
+    margin: 2rem 0 !important;
+    padding: 2rem !important;
+    overflow: visible !important;
+    max-height: none !important;
+    min-height: auto !important;
+}
+
+/* Match login page logo styling */
+.auth-logo {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-primary);
+}
+
+/* Match login page title styling */
+.auth-title {
+    color: var(--text-primary);
+}
+
+/* Match login page subtitle styling */
+.auth-subtitle {
+    color: var(--text-secondary);
+}
+
+/* OTP Input Styles - Match login form-input styling */
+.otp-input {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    margin: 0 0.15rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    color: var(--text-primary);
+    border-radius: 0.375rem;
+    outline: none;
+}
+
+.otp-input:focus {
+    border-color: var(--primary-color);
+    background-color: var(--dark-surface);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.otp-input:valid {
+    border-color: #10b981;
+    background-color: #064e3b;
+}
+
+.otp-input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Match login page button styling */
+.auth-button {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+/* Match login page link styling */
+.auth-link {
+    color: var(--primary-color);
+    transition: color 0.2s;
+}
+
+.auth-link:hover {
+    color: var(--text-primary);
+}
+
+/* Font Awesome Icon Display Fixes */
+.fa-solid {
+    display: inline-block !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* Fallback Icons using Unicode Symbols */
+.icon-fallback {
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+
+/* Center alignment for all elements - Override Tailwind */
+.auth-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+/* Override Tailwind flex classes */
+.flex {
+    display: flex !important;
+}
+
+.justify-center {
+    justify-content: center !important;
+}
+
+.items-center {
+    align-items: center !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* Force center alignment for all sections */
+.auth-card > div {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Override the info box alignment */
+.bg-blue-50 {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.bg-blue-50 .flex {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Override the pro tip alignment */
+.bg-gray-800\/50 {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.bg-gray-800\/50 .flex {
+    justify-content: center !important;
+    align-items: flex-start !important;
+}
+
+/* Force center for all text elements */
+.text-2xl, .text-sm, .text-xs {
+    text-align: center !important;
+}
+
+/* Override button alignment */
+.auth-button {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Override form alignment */
+#otp-form {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+#otp-form > div {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* Override input group alignment */
+.flex.justify-center.gap-3 {
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Override label alignment */
+.block.text-sm.font-medium.text-gray-300.mb-3.text-center {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+/* Override resend section */
+.mt-6.text-center {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Override pro tip section */
+.mt-6.p-4.bg-gray-800\/50.rounded-lg {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* Override all flex containers */
+.flex {
+    display: flex !important;
+}
+
+.flex.items-center {
+    align-items: center !important;
+}
+
+.flex.items-start {
+    align-items: flex-start !important;
+}
+
+/* Force center for all direct children of auth-card */
+.auth-card > * {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* Override any remaining left alignment */
+* {
+    text-align: center !important;
+}
+
+/* Specific overrides for problematic elements */
+.w-full {
+    width: 100% !important;
+}
+
+.max-w-md {
+    max-width: 28rem !important;
+    margin: 0 auto !important;
+}
+
+.space-y-10 > * + * {
+    margin-top: 2.5rem !important;
+}
+
+/* Ensure inputs are centered */
+.otp-input {
+    width: 3rem !important;
+    height: 3rem !important;
+    font-size: 1.5rem !important;
+    margin: 0 0.15rem !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
+    background-color: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+    color: var(--text-primary) !important;
+    border-radius: 0.375rem !important;
+    outline: none !important;
+}
+
+.otp-input:focus {
+    border-color: var(--primary-color) !important;
+    background-color: var(--dark-surface) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+.otp-input:valid {
+    border-color: #10b981 !important;
+    background-color: #064e3b !important;
+}
+
+.otp-input::placeholder {
+    color: var(--text-secondary) !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .auth-card {
+        max-width: 450px;
+        padding: 3rem;
+    }
+    
+    .otp-input {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.75rem;
+    }
+    
+    .otp-input-group {
+        gap: 1rem;
+    }
+    
+    .otp-title {
+        font-size: 2rem;
+    }
+    
+    .otp-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .otp-info-text {
+        font-size: 1rem;
+    }
+    
+    .otp-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.125rem;
+    }
+}
+
+/* Large Desktop (1400px and above) */
+@media (min-width: 1400px) {
+    .auth-card {
+        max-width: 500px;
+        padding: 3.5rem;
+    }
+    
+    .otp-input {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+    
+    .otp-input-group {
+        gap: 1.25rem;
+    }
+}
+
+/* Tablet Landscape (768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .auth-card {
+        max-width: 400px;
+        padding: 2.5rem;
+    }
+    
+    .otp-input {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+    
+    .otp-input-group {
+        gap: 0.75rem;
+    }
+    
+    .otp-title {
+        font-size: 1.75rem;
+    }
+    
+    .otp-subtitle {
+        font-size: 1rem;
+    }
+    
+    .otp-button {
+        padding: 0.625rem 1.25rem;
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Portrait (481px to 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body.auth-bg {
+        padding: 1.5rem;
+    }
+    
+    .auth-card {
+        max-width: 380px;
+        padding: 2rem;
+    }
+    
+    .otp-input {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.375rem;
+    }
+    
+    .otp-input-group {
+        gap: 0.625rem;
+    }
+    
+    .otp-title {
+        font-size: 1.5rem;
+    }
+    
+    .otp-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .otp-info-box {
+        padding: 0.875rem;
+    }
+    
+    .otp-info-text {
+        font-size: 0.8125rem;
+    }
+    
+    .otp-button {
+        padding: 0.5625rem 1.125rem;
+        font-size: 0.9375rem;
+    }
+    
+    .otp-pro-tip {
+        padding: 0.875rem;
+    }
+    
+    .otp-pro-tip-text {
+        font-size: 0.6875rem;
+    }
+}
+
+/* Mobile Large (375px to 480px) */
+@media (min-width: 375px) and (max-width: 480px) {
+    body.auth-bg {
+        padding: 1rem;
+    }
+    
+    .auth-card {
+        max-width: 340px;
+        padding: 1.75rem;
+        border-radius: 0.75rem;
+    }
+    
+    .otp-input {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
+    
+    .otp-input-group {
+        gap: 0.5rem;
+    }
+    
+    .otp-title {
+        font-size: 1.375rem;
+    }
+    
+    .otp-subtitle {
+        font-size: 0.8125rem;
+    }
+    
+    .otp-info-box {
+        padding: 0.75rem;
+    }
+    
+    .otp-info-text {
+        font-size: 0.75rem;
+    }
+    
+    .otp-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .otp-resend-text {
+        font-size: 0.8125rem;
+    }
+    
+    .otp-resend-button {
+        font-size: 0.8125rem;
+    }
+    
+    .otp-pro-tip {
+        padding: 0.75rem;
+    }
+    
+    .otp-pro-tip-text {
+        font-size: 0.625rem;
+    }
+}
+
+/* Mobile Medium (320px to 374px) */
+@media (min-width: 320px) and (max-width: 374px) {
+    body.auth-bg {
+        padding: 0.75rem;
+    }
+    
+    .auth-card {
+        max-width: 300px;
+        padding: 1.5rem;
+        border-radius: 0.625rem;
+    }
+    
+    .otp-input {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.125rem;
+    }
+    
+    .otp-input-group {
+        gap: 0.375rem;
+    }
+    
+    .otp-title {
+        font-size: 1.25rem;
+    }
+    
+    .otp-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .otp-info-box {
+        padding: 0.625rem;
+    }
+    
+    .otp-info-text {
+        font-size: 0.6875rem;
+    }
+    
+    .otp-button {
+        padding: 0.4375rem 0.875rem;
+        font-size: 0.8125rem;
+    }
+    
+    .otp-resend-text {
+        font-size: 0.75rem;
+    }
+    
+    .otp-resend-button {
+        font-size: 0.75rem;
+    }
+    
+    .otp-pro-tip {
+        padding: 0.625rem;
+    }
+    
+    .otp-pro-tip-text {
+        font-size: 0.5625rem;
+    }
+}
+
+/* Mobile Small (below 320px) */
+@media (max-width: 319px) {
+    body.auth-bg {
+        padding: 0.5rem;
+    }
+    
+    .auth-card {
+        max-width: 280px;
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+    }
+    
+    .otp-input {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    
+    .otp-input-group {
+        gap: 0.25rem;
+    }
+    
+    .otp-title {
+        font-size: 1.125rem;
+    }
+    
+    .otp-subtitle {
+        font-size: 0.6875rem;
+    }
+    
+    .otp-info-box {
+        padding: 0.5rem;
+    }
+    
+    .otp-info-text {
+        font-size: 0.625rem;
+    }
+    
+    .otp-button {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.75rem;
+    }
+    
+    .otp-resend-text {
+        font-size: 0.6875rem;
+    }
+    
+    .otp-resend-button {
+        font-size: 0.6875rem;
+    }
+    
+    .otp-pro-tip {
+        padding: 0.5rem;
+    }
+    
+    .otp-pro-tip-text {
+        font-size: 0.5rem;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    body.auth-bg {
+        padding: 0.5rem;
+    }
+    
+    .auth-card {
+        padding: 1.5rem;
+    }
+    
+    .otp-input {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
+    
+    .otp-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .otp-subtitle {
+        font-size: 0.8125rem;
+        margin-bottom: 1rem;
+    }
+    
+    .otp-info-box {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .otp-pro-tip {
+        padding: 0.75rem;
+        margin-top: 1rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .auth-card {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Focus States for Accessibility */
+.otp-input:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.auth-button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .auth-card {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .auth-button {
+        display: none;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .otp-input {
+        min-height: 44px;
+    }
+    
+    .auth-button {
+        min-height: 44px;
+    }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .otp-input,
+    .auth-button {
+        transition: none;
+    }
+    
+    .pop-in {
+        animation: none;
+    }
+} 
