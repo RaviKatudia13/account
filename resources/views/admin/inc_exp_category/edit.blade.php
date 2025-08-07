@@ -5,12 +5,12 @@
 @section('content')
 <div class="container mt-4">
     <h1 class="h3 mb-4">Edit Income/Expense Category</h1>
-    <form method="POST" action="{{ route('admin.inc-exp-category.update', $inc_exp_category) }}" style="max-width:400px;">
+    <form method="POST" action="{{ route('admin.inc-exp-category.update', $category) }}" style="max-width:400px;">
         @csrf
         @method('PUT')
         <div class="mb-3">
             <label for="name" class="form-label">Category Name</label>
-            <input type="text" name="name" class="form-control" value="{{ old('name', $inc_exp_category->name) }}" required>
+            <input type="text" name="name" class="form-control" value="{{ old('name', $category->name) }}" required>
             @error('name')
                 <div class="text-danger small">{{ $message }}</div>
             @enderror
